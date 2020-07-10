@@ -1,0 +1,10 @@
+.top{
+    background-color: #33A3F4;
+    box-sizing: border-box;
+    padding: 30px 10px;
+}
+.top>div {
+    color: white;
+    display: inline-block;
+}
+
