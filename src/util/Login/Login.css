@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.login {
+    /*margin-top:5rem;*/
+    /*height: 150px;*/
+
+}
+.forgot {
+    font-size: 17px;
+    color: #888;
+    text-decoration: underline;
+}
+
+

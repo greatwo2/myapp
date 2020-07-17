@@ -15,6 +15,12 @@ class Home extends React.Component {
             fullScreen: true,
         };
     }
+    togglePage=(val)=>{
+        this.setState({
+            selectedTab:val
+        })
+    };
+
 //渲染组件
     renderContent(pageText) {
         if(pageText=='index'){
@@ -37,8 +43,8 @@ class Home extends React.Component {
             );
         }else if(pageText=='my'){
             return (
-                <div style={{ backgroundColor: 'white', height: '100%' }}>
-                    <My history={this.props.history}></My>
+                <div style={{ backgroundColor: '#F1F3F4', height: '100%' }}>
+                    <My togglePage={this.togglePage} history={this.props.history}></My>
                 </div>
             );
         }
@@ -89,7 +95,7 @@ class Home extends React.Component {
                         }}
                         />
                         }
-                        title="公告"
+                        title="订单"
                         key="Koubei"
                         badge={'new'}
                         selected={this.state.selectedTab === 2}

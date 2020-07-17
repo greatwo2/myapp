@@ -1,0 +1,15 @@
+.email {
+    display: inline-block;
+    width: 65%;
+    float: left;
+}
+.float {
+    overflow: hidden;
+}
+.emailBtn {
+    /*display: inline-block;*/
+    width: 35%;
+    height: 44px;
+    box-sizing: border-box;
+    float: left;
+ }

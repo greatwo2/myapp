@@ -1,10 +1,25 @@
 .top{
     background-color: #33A3F4;
     box-sizing: border-box;
-    padding: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
 }
 .top>div {
     color: white;
-    display: inline-block;
+    /*display: inline-block;*/
 }
-
+.my-list .spe .am-list-extra {
+    flex-basis: initial;
+}
+.My {
+    background-color: #F1F3F4;
+}
+.headImg {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.headImg img {
+    border-radius: 50%;
+}

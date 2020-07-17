@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Provider} from "mobx-react";
 import App from './App';
+import store from "./store/Index";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
+    <Provider {...store}>
+        <App />
+    </Provider>
 
-    <App />
   ,
   document.getElementById('root')
 );
