@@ -3,6 +3,7 @@ import { TabBar } from 'antd-mobile';
 import Index from '../pages/Index/Index';
 import Notice from '../pages/Notice/Notice';
 import Cart from '../pages/ShopCart/Cart';
+import Order from '../pages/Order/Order';
 import My from '../pages/UserInfo/My';
 import { HomeOutlined,NotificationOutlined,UserOutlined,ShoppingCartOutlined } from '@ant-design/icons';
 
@@ -15,12 +16,6 @@ class Home extends React.Component {
             fullScreen: true,
         };
     }
-    togglePage=(val)=>{
-        this.setState({
-            selectedTab:val
-        })
-    };
-
 //渲染组件
     renderContent(pageText) {
         if(pageText=='index'){
@@ -41,13 +36,20 @@ class Home extends React.Component {
                     <Cart history={this.props.history}></Cart>
                 </div>
             );
+        }else if(pageText=='Order'){
+            return (
+                <div style={{ backgroundColor: 'white', height: '100%' }}>
+                    <Order history={this.props.history}></Order>
+                </div>
+            );
         }else if(pageText=='my'){
             return (
-                <div style={{ backgroundColor: '#F1F3F4', height: '100%' }}>
-                    <My togglePage={this.togglePage} history={this.props.history}></My>
+                <div style={{ backgroundColor: 'white', height: '100%' }}>
+                    <My history={this.props.history}></My>
                 </div>
             );
         }
+
 
     }
 
@@ -95,7 +97,7 @@ class Home extends React.Component {
                         }}
                         />
                         }
-                        title="订单"
+                        title="公告"
                         key="Koubei"
                         badge={'new'}
                         selected={this.state.selectedTab === 2}
@@ -132,6 +134,29 @@ class Home extends React.Component {
                         {this.renderContent('cart')}
                     </TabBar.Item>
                     <TabBar.Item
+                        icon={<ShoppingCartOutlined style={{
+                            fontSize:'22px'
+                        }}
+                        />
+                        }
+                        selectedIcon={<ShoppingCartOutlined style={{
+                            fontSize:'22px'
+                        }}
+                        />
+                        }
+                        title="订单"
+                        key="Order"
+                        badge={1}
+                        selected={this.state.selectedTab === 4}
+                        onPress={() => {
+                            this.setState({
+                                selectedTab: 4,
+                            });
+                        }}
+                    >
+                        {this.renderContent('Order')}
+                    </TabBar.Item>
+                    <TabBar.Item
                         icon={<UserOutlined style={{
                             fontSize:'22px'
                         }}
@@ -144,10 +169,10 @@ class Home extends React.Component {
                         }
                         title="我的"
                         key="my"
-                        selected={this.state.selectedTab === 4}
+                        selected={this.state.selectedTab === 5}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 4,
+                                selectedTab: 5,
                             });
                         }}
                     >
